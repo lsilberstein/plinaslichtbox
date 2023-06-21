@@ -1,0 +1,17 @@
+{
+  "name": "pi",
+  "version": "1.0.0",
+  "description": "a small server to control a philips hue lamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "linus silberstein",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "request": "^2.88.2"
+  },
+  "type": "module"
+}
