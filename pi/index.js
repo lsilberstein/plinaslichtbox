@@ -1,6 +1,6 @@
 import app from "./app.js";
-import initRoutes from "./routes.js";
-import init from "./inits.js";
+import initRoutes from "./setup/routes.js";
+import init from "./setup/inits.js";
 // load env variables
 import dotenv from "dotenv";
 dotenv.config();

@@ -1,7 +1,9 @@
-import ApiAxios from "./ApiAxios.js";
+import ApiAxios from "../ApiAxios.js";
+import { duckDNSinterval } from "./intervals.js";
 
 const init = async () => {
     console.log("Searching for HUE Bridge...");
+    
     const res = await ApiAxios.get("https://discovery.meethue.com/", (err, res, body) => {
         if (err) {
             console.log("error:", err);
@@ -11,6 +13,8 @@ const init = async () => {
         }
     });
     console.log("I found a HUE Bridge connected at this IP address:", res.data[0].internalipaddress);
+
+    duckDNSinterval();
 }
 
 export default init;
