@@ -20,6 +20,7 @@ export function switchState(source) {
                     setState("lighton");
                     break;
             }
+            break;
         case "lighton":
             switch (source) {
                 case "button":
@@ -30,6 +31,7 @@ export function switchState(source) {
                     // do nothing
                     break;
             }
+            break;
     }
 
 }

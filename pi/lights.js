@@ -21,7 +21,7 @@ export async function turnLightOff() {
 
     lightsAxios.put(`api/${PHILIPS_HUE_API_ID}/lights/${PHILIPS_HUE_API_LIGHT_ID}/state`, { on: false })
         .then((err, res) => {
-            console.log("I turned the light on!", res);
+            console.log("I turned the light off!", res);
         }
     )
 }
