@@ -4,7 +4,7 @@ import { duckDNSinterval } from "./intervals.js";
 import { setLightsAxios } from "../lights.js";
 
 const init = async () => { 
-    /*const discoveryAxios = createAxios("");
+    const discoveryAxios = createAxios("");
 
     const res = await discoveryAxios.get("https://discovery.meethue.com/", (err, res, body) => {
         if (err) {
@@ -17,8 +17,7 @@ const init = async () => {
     
     console.log("I found a HUE Bridge connected at this IP address:", res.data[0].internalipaddress, "port:", res.data[0].port);
 
-    setLightsAxios(createAxios(`//${res.data[0].internalipaddress}/`));*/
-    setLightsAxios(createAxios("//192.168.2.68/"));
+    setLightsAxios(createAxios(`//${res.data[0].internalipaddress}/`));
 
     initButton();
 
