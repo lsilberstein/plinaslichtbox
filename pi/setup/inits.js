@@ -17,7 +17,7 @@ const init = async () => {
     
     console.log("I found a HUE Bridge connected at this IP address:", res.data[0].internalipaddress, "port:", res.data[0].port);
 
-    setLightsAxios(createAxios(`$//${res.data[0].internalipaddress}/`));
+    setLightsAxios(createAxios(`//${res.data[0].internalipaddress}/`));
     //setLightsAxios(createAxios("//192.168.2.68/"));
 
     turnLightOn();
