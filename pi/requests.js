@@ -6,7 +6,11 @@ export const sendLightRequest = () => {
 
     const axios = createAxios(`http://${EXTERNAL_DOMAIN}.duckdns.org:${EXTERNAL_PORT}/thinkingOfYou`);
 
-    res = axios.put("/thinkingOfYou");
+    try {
+        res = axios.put("/thinkingOfYou");
+    } catch (err) {
+        console.log("Error sending note", err);
+    }
 
     console.log("I have sent a note!", res);
 }
