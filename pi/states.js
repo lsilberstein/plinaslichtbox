@@ -1,4 +1,4 @@
-import { turnLightOff, turnLightOn } from "./lights";
+import { turnLightOff, turnLightOn } from "./lights.js";
 
 // possible states: idle, lighton
 let state = "idle";
