@@ -8,20 +8,16 @@ export async function turnLightOn() {
     const PHILIPS_HUE_API_ID = process.env.PHILIPS_HUE_API_ID;
     const PHILIPS_HUE_API_LIGHT_ID = process.env.PHILIPS_HUE_API_LIGHT_ID;
 
-    lightsAxios.put(`api/${PHILIPS_HUE_API_ID}/lights/${PHILIPS_HUE_API_LIGHT_ID}/state`, { on: true, bri: 100 })
-        .then((err, res) => {
-            console.log("I turned the light on!", res);
-        }
-    )
+    const res = await lightsAxios.put(`api/${PHILIPS_HUE_API_ID}/lights/${PHILIPS_HUE_API_LIGHT_ID}/state`, { on: true, bri: 100 });
+
+    console.log("I turned the light on!", res.data);
 }
 
-export async function turnLightOff() {
+export async function turnLightOn() {
     const PHILIPS_HUE_API_ID = process.env.PHILIPS_HUE_API_ID;
     const PHILIPS_HUE_API_LIGHT_ID = process.env.PHILIPS_HUE_API_LIGHT_ID;
 
-    lightsAxios.put(`api/${PHILIPS_HUE_API_ID}/lights/${PHILIPS_HUE_API_LIGHT_ID}/state`, { on: false })
-        .then((err, res) => {
-            console.log("I turned the light off!", res);
-        }
-    )
+    const res = await lightsAxios.put(`api/${PHILIPS_HUE_API_ID}/lights/${PHILIPS_HUE_API_LIGHT_ID}/state`, { on: true, bri: 100 });
+
+    console.log("I turned the light off!", res.data);
 }
