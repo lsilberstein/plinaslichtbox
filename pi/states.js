@@ -14,17 +14,21 @@ export function switchState(source) {
                 case "button":
                     turnLightOn();
                     setState("idle");
+                    break;
                 case "api":
                     turnLightOn();
                     setState("lighton");
+                    break;
             }
         case "lighton":
             switch (source) {
                 case "button":
                     turnLightOff();
                     setState("idle");
+                    break;
                 case "api":
                     // do nothing
+                    break;
             }
     }
 
