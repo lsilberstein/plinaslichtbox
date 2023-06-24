@@ -6,7 +6,7 @@ import { setLightsAxios, turnLightOn } from "../lights.js";
 const init = async () => { 
     const discoveryAxios = createAxios("");
 
-    const res = await discoveryAxios.get("https://discovery.meethue.com/", (err, res, body) => {
+    /*const res = await discoveryAxios.get("https://discovery.meethue.com/", (err, res, body) => {
         if (err) {
             console.log("error:", err);
             return err;
@@ -17,8 +17,8 @@ const init = async () => {
     
     console.log("I found a HUE Bridge connected at this IP address:", res.data[0].internalipaddress, "port:", res.data[0].port);
 
-    setLightsAxios(createAxios(`//${res.data[0].internalipaddress}/`));
-    //setLightsAxios(createAxios("//192.168.2.68/"));
+    setLightsAxios(createAxios(`//${res.data[0].internalipaddress}/`));*/
+    setLightsAxios(createAxios("//192.168.2.68/"));
 
     turnLightOn();
 
