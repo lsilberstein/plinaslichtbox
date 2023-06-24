@@ -1,11 +1,12 @@
-import ApiAxios from "../ApiAxios.js";
+import createAxios from "../ApiAxios.js";
 import { initButton } from "./button.js";
 import { duckDNSinterval } from "./intervals.js";
+import { setLightsAxios, turnLightOn } from "../lights.js";
 
 const init = async () => { 
-    const PHILIPS_HUE_API_ID = process.env.PHILIPS_HUE_API_ID;
+    const discoveryAxios = createAxios("");
 
-    const res = await ApiAxios.get("https://discovery.meethue.com/", (err, res, body) => {
+    /*const res = await discoveryAxios.get("https://discovery.meethue.com/", (err, res, body) => {
         if (err) {
             console.log("error:", err);
             return err;
@@ -13,18 +14,13 @@ const init = async () => {
             return res;
         }
     });
-    console.log("I found a HUE Bridge connected at this IP address:", res.data[0].internalipaddress);
+    
+    console.log("I found a HUE Bridge connected at this IP address:", res.data[0].internalipaddress, "port:", res.data[0].port);
 
-    const res2 = await ApiAxios.get(`${res.data[0].internalipaddress}/api/${PHILIPS_HUE_API_ID}/lights`, (err, res, body) => {
-        if (err) {
-            console.log("error:", err);
-            return err;
-        } else {
-            return res;
-        }
-    });
+    setLightsAxios(createAxios(`$//${res.data[0].internalipaddress}/`));*/
+    setLightsAxios(createAxios("//192.168.2.68/"));
 
-    console.log("I found these lights connected to the HUE Bridge:", res2.data);
+    turnLightOn();
 
     initButton();
 
