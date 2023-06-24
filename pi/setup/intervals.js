@@ -5,7 +5,7 @@ export const duckDNSinterval = () => {setInterval(async () => {
     const domain = process.env.DUCKDNS_DOMAIN;
     const token = process.env.DUCKDNS_TOKEN;
 
-    const Axios = createAxios("https://duckdns.org/");
+    const Axios = createAxios("//duckdns.org/");
 
     const res = await Axios.get(`update?domains=${domain}&token=${token}`, (err, res, body) => {
         if (err) {
@@ -21,4 +21,4 @@ export const duckDNSinterval = () => {setInterval(async () => {
 
 }, 
 // Interval is set to 15 Minutes; Maybe change to something different or make it changeable in .env
-1000 * 60 * 15)};
+1000 * 60)};
