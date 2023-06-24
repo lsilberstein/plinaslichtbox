@@ -13,7 +13,7 @@ export async function turnLightOn() {
     console.log("I turned the light on!", res.data);
 }
 
-export async function turnLightOn() {
+export async function turnLightOff() {
     const PHILIPS_HUE_API_ID = process.env.PHILIPS_HUE_API_ID;
     const PHILIPS_HUE_API_LIGHT_ID = process.env.PHILIPS_HUE_API_LIGHT_ID;
 
