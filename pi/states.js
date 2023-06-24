@@ -7,7 +7,7 @@ function setState(newState) {
     state = newState;
 }
 
-function switchState(source) {
+export function switchState(source) {
     switch (state) {
         case "idle":
             switch (source) {
