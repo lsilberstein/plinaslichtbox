@@ -1,4 +1,5 @@
 import { turnLightOff, turnLightOn } from "./lights.js";
+import { sendLightRequest } from "./requests.js";
 
 // possible states: idle, lighton
 let state = "idle";
@@ -12,8 +13,8 @@ export function switchState(source) {
         case "idle":
             switch (source) {
                 case "button":
-                    turnLightOn();
-                    setState("lighton");
+                    sendLightRequest();
+                    setState("idle");
                     break;
                 case "api":
                     turnLightOn();
