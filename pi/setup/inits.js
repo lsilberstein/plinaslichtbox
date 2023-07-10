@@ -1,6 +1,6 @@
 import createAxios from "../ApiAxios.js";
 import { initButton } from "./button.js";
-import { duckDNSinterval } from "./intervals.js";
+import { duckDNSinterval, sendDuckDNSReq } from "./intervals.js";
 import { setLightsAxios } from "../lights.js";
 
 const init = async () => { 
@@ -20,6 +20,8 @@ const init = async () => {
     setLightsAxios(createAxios(`//${res.data[0].internalipaddress}/`));
 
     initButton();
+
+    sendDuckDNSReq();
 
     duckDNSinterval();
 }

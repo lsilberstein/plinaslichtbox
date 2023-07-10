@@ -1,6 +1,12 @@
 import createAxios from "../ApiAxios.js";
 
 export const duckDNSinterval = () => {setInterval(async () => {
+    sendDuckDNSReq();
+}, 
+// Interval is set to 15 Minutes; Maybe change to something different or make it changeable in .env
+1000 * 60 * 15)};
+
+export async function sendDuckDNSReq() {
     // get DuckDNS domain and token form .env
     const domain = process.env.DUCKDNS_DOMAIN;
     const token = process.env.DUCKDNS_TOKEN;
@@ -18,7 +24,4 @@ export const duckDNSinterval = () => {setInterval(async () => {
     });
 
     console.log("I updated the DuckDNS adress:", res.data);
-
-}, 
-// Interval is set to 15 Minutes; Maybe change to something different or make it changeable in .env
-1000 * 60)};
+}
