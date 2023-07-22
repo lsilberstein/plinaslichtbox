@@ -13,15 +13,19 @@ export async function sendDuckDNSReq() {
 
     const Axios = createAxios("//duckdns.org/");
 
-    const res = await Axios.get(`update?domains=${domain}&token=${token}`, (err, res, body) => {
-        if (err) {
-            console.log("error:", err);
-            return err;
-        } else {
-            console.log("DuckDNS update:", body);
-            return res;
-        }
-    });
+    try {
+        const res = await Axios.get(`update?domains=${domain}&token=${token}`, (err, res, body) => {
+            if (err) {
+                console.log("error:", err);
+            } else {
+                console.log("DuckDNS update:", body);
+                return res;
+            }
+        });
+    } catch (err) {
+        console.log("Error updating DuckDNS:", err);
+    }
+    
 
     console.log("I updated the DuckDNS adress:", res.data);
 }

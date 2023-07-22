@@ -9,6 +9,6 @@ export function initButton () {
     });
 
     process.on('SIGINT', () => {
-        button.unexport();
+        button.close();
     });
 }
