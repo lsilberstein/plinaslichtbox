@@ -25,7 +25,4 @@ export async function sendDuckDNSReq() {
     } catch (err) {
         console.log("Error updating DuckDNS:", err);
     }
-    
-
-    console.log("I updated the DuckDNS adress:", res.data);
 }
